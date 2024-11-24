@@ -1,0 +1,21 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "-g",
+      "-Ilib/raylib/src",
+      "-c",
+      "-o",
+      "build/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/Users/khalid/Developer/game_of_life",
+    "file": "/Users/khalid/Developer/game_of_life/src/main.cpp",
+    "output": "/Users/khalid/Developer/game_of_life/build/main.o"
+  }
+]

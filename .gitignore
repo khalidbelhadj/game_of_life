@@ -1,0 +1,6 @@
+lib/raylib
+build/*
+.DS_Store
+.cache
+.vscode
+.idea
