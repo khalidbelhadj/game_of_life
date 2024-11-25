@@ -63,17 +63,6 @@ void tick(grid_t &grid) {
     }
   }
 
-  // print tmp_grid then newline
-
-  for (uint i = 0; i < rows; i++) {
-    for (uint j = 0; j < cols; j++) {
-      std::cout << tmp_grid[i][j] << " ";
-    }
-    std::cout << std::endl;
-  }
-
-  std::cout << std::endl;
-
   grid = tmp_grid;
 }
 
@@ -93,6 +82,15 @@ int main() {
       ClearBackground(RAYWHITE);
 
       for (uint i = 0; i < rows; i++) {
+        for (uint j = 0; j < cols; j++) {
+          if (grid[i][j]) {
+            DrawRectangle(j * width / cols, i * height / rows, width / cols,
+                          height / rows, BLACK);
+          }
+        }
+      }
+
+      for (uint i = 0; i < rows; i++) {
         DrawLine(0, i * height / rows, width, i * height / rows, LIGHTGRAY);
       }
       DrawLine(0, height, width, height, LIGHTGRAY);
@@ -104,15 +102,6 @@ int main() {
       // draw guide at the bottom side by side
       const char *guide = "SPACE: Start/Stop | C: Clear | S: Step";
       DrawText(guide, 10, height + 10, 10, DARKGRAY);
-
-      for (uint i = 0; i < rows; i++) {
-        for (uint j = 0; j < cols; j++) {
-          if (grid[i][j]) {
-            DrawRectangle(j * width / cols, i * height / rows, width / cols,
-                          height / rows, BLACK);
-          }
-        }
-      }
 
       if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         Vector2 mouse = GetMousePosition();
